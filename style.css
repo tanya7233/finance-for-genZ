@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fdf6fd;
+  color: #333;
+  padding: 1rem;
+}
+header, footer {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+.progress-bar {
+  width: 100%;
+  background: #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 20px;
+  margin-top: 0.5rem;
+}
+.progress {
+  background: #34d399;
+  height: 100%;
+}
+.mood-options span {
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.mood-options span:hover {
+  transform: scale(1.2);
+}
+.avatar {
+  text-align: center;
+}
+.avatar .emoji {
+  font-size: 4rem;
+}
+/* Dark Mode Support */
+body.dark {
+  background: #111827;
+  color: #f9fafb;
+}
+body.dark .card {
+  background: #1f2937;
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+#progressFill {
+  height: 25px;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  line-height: 25px;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+#challengeDays button {
+  margin: 5px;
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: 1px solid #999;
+  background-color: #eee;
+  cursor: pointer;
+}
+#challengeDays button:disabled {
+  background-color: #c8e6c9;
+  color: #333;
+  cursor: not-allowed;
+}
+
+.mood-buttons button {
+  margin: 6px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #f3f4f6;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s;
+}
+.mood-buttons button:hover {
+  background-color: #e0e7ff;
+}
+
+.advice-box {
+  margin-top: 10px;
+  padding: 12px;
+  border-left: 4px solid #6366f1;
+  background-color: #f0f0ff;
+  font-style: italic;
+}
+
+
+
+
+/* Switch Style */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+.switch input { display: none; }
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 24px;
+  transition: .4s;
+}
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #60a5fa;
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+

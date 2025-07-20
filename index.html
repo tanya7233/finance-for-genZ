@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FinGen - GenZ Finance</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>💸 FinGen</h1>
+    <p>Budgeting, but make it ✨aesthetic✨</p>
+    <p>by TECHTONIC✨</p>
+  </header>
+
+  <main>
+<!-- Smart Budget Planner -->
+<section class="card">
+  <h2>💼 Budget Planner</h2>
+  <label>Enter Monthly Income: ₹
+    <input type="number" id="incomeInput" placeholder="e.g. 10000" />
+  </label>
+  <button onclick="calculateBudget()">Calculate</button>
+  <ul id="budgetResult"></ul>
+</section>
+
+<!-- Editable Spending Categories -->
+<section class="card">
+  <h2>📊 Add Spending Category</h2>
+  <input type="text" id="categoryName" placeholder="Category name" />
+  <input type="number" id="categoryAmount" placeholder="Amount" />
+  <button onclick="addCategory()">Add</button>
+</section>
+
+<!-- Dark Mode Toggle -->
+<section class="card">
+  <h2>🌓 Theme</h2>
+  <label class="switch">
+    <input type="checkbox" id="darkToggle" onchange="toggleDarkMode()" />
+    <span class="slider round"></span> Dark Mode
+  </label>
+</section>
+
+    <!-- Spending Overview (Chart) -->
+    <section class="card">
+      <h2>Spending Overview</h2>
+      <canvas id="spendingChart"></canvas>
+    </section>
+
+    <!-- Budget Progress -->
+    <section class="card">
+      <h2>Budget Progress</h2>
+      <div class="progress-bar">
+        <div class="progress" style="width: 75%;"></div>
+      </div>
+      <p>₹7,500 of ₹10,000 saved</p>
+    </section>
+
+    <!-- Mood Tracker -->
+    <section class="card">
+      <h2>Money Mood</h2>
+      <div class="mood-options">
+        <span>😄</span><span>😊</span><span>😐</span><span>😟</span><span>😩</span>
+      </div>
+      <p id="moodText">Today’s mood: 😐</p>
+    </section>
+
+
+<!--streak tracker-->
+<section class="card">
+  <h2>🔥 Money Streaks</h2>
+  <p>You’ve been financially active for <span id="streakDays">0</span> day(s) in a row!</p>
+  <button onclick="increaseStreak()">Save Today</button>
+</section>
+
+
+
+<!--avatar-->
+<section class="card">
+  <h2>🧑‍🎨 Choose Your Avatar Style</h2>
+  <select id="avatarStyle" onchange="updateAvatar()">
+    <option value="🧑">Classic</option>
+    <option value="🦸">Hero</option>
+    <option value="🧙">Wizard</option>
+    <option value="🐱">Cat</option>
+  </select>
+  <h1 id="avatarDisplay" style="font-size: 48px;">🧑</h1>
+</section>
+
+
+
+<!--mood based advice-->
+<section class="card">
+  <h2>📱 Mood-Based Financial Advice</h2>
+  <p>How are you feeling about money today?</p>
+  <div class="mood-buttons">
+    <button onclick="showAdvice('stressed')">😰 Stressed</button>
+    <button onclick="showAdvice('confident')">😎 Confident</button>
+    <button onclick="showAdvice('curious')">🧐 Curious</button>
+  </div>
+  <p id="moodAdvice" class="advice-box"></p>
+</section>
+
+
+<!--monthly challenge-->
+<section class="card">
+  <h2>📆 Monthly Challenge</h2>
+  <p>Challenge: Save ₹100 every day for 7 days</p>
+  <div id="challengeDays">
+    <!-- Buttons will be inserted dynamically -->
+  </div>
+  <p id="challengeStatus"></p>
+</section>
+
+
+<!--Savings Goal Tracker-->
+<section class="card">
+  <h2>🎯 Savings Goal Tracker</h2>
+  <input type="number" id="goalAmount" placeholder="Enter savings goal (₹)" />
+  <input type="number" id="savedAmount" placeholder="Amount saved today (₹)" />
+  <button onclick="updateGoal()">Add Savings</button>
+  <div class="progress-bar">
+    <div id="progressFill">0%</div>
+  </div>
+  <p id="rewardBadge"></p>
+</section>
+
+
+    <!-- Avatar Milestone -->
+    <section class="card avatar">
+      <h2>Level Up!</h2>
+      <div class="emoji">🧚‍♀️</div>
+      <p>You reached ₹5,000 milestone 🎉</p>
+    </section>
+
+    <!-- Savings Tip of the Day -->
+    <section class="card">
+      <h2>Tip of the Day</h2>
+      <p id="savingsTip">Loading tip...</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made for Gen-Z with ❤️</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
